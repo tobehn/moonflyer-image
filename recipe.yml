@@ -48,7 +48,36 @@ stages:
     - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.12-3_amd64.deb
     - dpkg -i tuxedo-keyboard_3.2.10_all.deb
     - dpkg -i tuxedo-control-center_2.1.12-3_amd64.deb
-    
+
+  - name: vanilla-tools
+    type: shell
+    source:
+      type: tar
+      url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/continuous/vanilla-tools.tar.gz
+    commands:
+    - mkdir -p /usr/bin
+    - cp /sources/vanilla-tools/vanilla-tools/nrun /usr/bin/nrun
+    - cp /sources/vanilla-tools/vanilla-tools/prime-switch /usr/bin/prime-switch
+    - chmod +x /usr/bin/nrun
+    - chmod +x /usr/bin/prime-switch
+
+  - name: vanilla-prime-utility
+    type: meson
+    source:
+      type: git
+      url: https://github.com/Vanilla-OS/vanilla-prime-utility
+      branch: main
+      commit: latest
+    modules:
+    - name: vanilla-prime-utility-deps-install
+      type: apt
+      source:
+        packages:
+        - build-essential
+        - gettext
+        - libadwaita-1-dev
+        - meson
+  
   # Put your custom actions before this comment
 
   - name: set-image-name-abroot
