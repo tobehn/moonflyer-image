@@ -40,7 +40,14 @@ stages:
       - modules/50-install-debs.yml # Sample local module present in this repository
       - gh:vanilla-os/dev-image:main:modules/00-basics.yml # Sample GitHub remote module in the format: `gh:your-name/your-repo:branch:modules/file.yml`
       - https://raw.githubusercontent.com/Vanilla-OS/dev-image/main/modules/05-go.yml # Sample full URL remote module
-
+  
+  - name: install-ttc # Install Tuxedo Software
+    type: shell
+    commands:
+    - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-keyboard/tuxedo-keyboard_3.2.10_all.deb
+    - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.12-3_amd64.deb
+    - dpkg -i tuxedo-keyboard_3.2.10_all.deb && tuxedo-control-center_2.1.12-3_amd64.deb
+    
   # Put your custom actions before this comment
 
   - name: set-image-name-abroot
