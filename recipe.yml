@@ -2,7 +2,7 @@ name: Moonflyers Vanilla Desktop # Replace this name with your image name
 id: moonflyer # Replace this ID with your image ID
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/desktop:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
+  base: ghcr.io/vanilla-os/nvidia:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
   singlelayer: false
   labels:
     maintainer: self-maintained # Optionally, Replace this with your name
@@ -46,7 +46,8 @@ stages:
     commands:
     - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-keyboard/tuxedo-keyboard_3.2.10_all.deb
     - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.12-3_amd64.deb
-    - dpkg -i tuxedo-keyboard_3.2.10_all.deb && tuxedo-control-center_2.1.12-3_amd64.deb
+    - dpkg -i tuxedo-keyboard_3.2.10_all.deb
+    - dpkg -i tuxedo-control-center_2.1.12-3_amd64.deb
     
   # Put your custom actions before this comment
 
