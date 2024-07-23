@@ -32,7 +32,7 @@ stages:
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
     commands:
-    - echo Example output
+      - echo Example output
 
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
@@ -64,16 +64,16 @@ stages:
   - name: tcc # Install Tuxedo Software
     type: shell
     commands:
-    - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-keyboard/tuxedo-keyboard_3.2.10_all.deb
-    - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.12-3_amd64.deb
-    - dpkg -i tuxedo-keyboard_3.2.10_all.deb
-    - dpkg -i tuxedo-control-center_2.1.12-3_amd64.deb
+      - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-keyboard/tuxedo-keyboard_3.2.10_all.deb
+      - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.12-3_amd64.deb
+      - dpkg -i tuxedo-keyboard_3.2.10_all.deb
+      - dpkg -i tuxedo-control-center_2.1.12-3_amd64.deb
 
   - name: syncthing
     type: shell
     commands:
-    - apt-get update
-    - apt-get install syncthing -y
+      - apt-get update
+      - apt-get install syncthing -y
 
   - name: vanilla-tools
     type: shell
@@ -81,11 +81,11 @@ stages:
       type: tar
       url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/continuous/vanilla-tools.tar.gz
     commands:
-    - mkdir -p /usr/bin
-    - cp /sources/vanilla-tools/vanilla-tools/nrun /usr/bin/nrun
-    - cp /sources/vanilla-tools/vanilla-tools/prime-switch /usr/bin/prime-switch
-    - chmod +x /usr/bin/nrun
-    - chmod +x /usr/bin/prime-switch
+      - mkdir -p /usr/bin
+      - cp /sources/vanilla-tools/vanilla-tools/nrun /usr/bin/nrun
+      - cp /sources/vanilla-tools/vanilla-tools/prime-switch /usr/bin/prime-switch
+      - chmod +x /usr/bin/nrun
+      - chmod +x /usr/bin/prime-switch
 
   - name: vanilla-prime-utility
     type: meson
