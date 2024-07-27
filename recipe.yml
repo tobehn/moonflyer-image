@@ -25,6 +25,7 @@ stages:
       - apt-get update
 
 # BEGIN custom actions
+    
     - name: syncthing # apt do installs
       type: apt
       source:
@@ -50,7 +51,7 @@ stages:
     - name: set-libvirt-group
       type: shell
       commands:
-        - usermod -aG libvirt $USER
+        - chmod +x /etc/profile.d/add_libvirt_group.sh
     
     - name: install-tcc # Install Tuxedo Software
       type: shell
