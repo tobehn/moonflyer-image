@@ -64,9 +64,9 @@ stages:
   - name: tcc # Install Tuxedo Software
     type: shell
     commands:
-      - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-keyboard/tuxedo-keyboard_3.2.10_all.deb
+      - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.6.1_all.deb
       - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.12-3_amd64.deb
-      - dpkg -i tuxedo-keyboard_3.2.10_all.deb
+      - dpkg -i tuxedo-drivers_4.6.1_all.deb
       - dpkg -i tuxedo-control-center_2.1.12-3_amd64.deb
 
   - name: syncthing
