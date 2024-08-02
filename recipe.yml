@@ -26,12 +26,17 @@ stages:
 
 # BEGIN custom actions
 
-    - name: syncthing # apt do installs
+    - name: essentials # apt do install essentials
       type: apt
       source:
         packages:
         - syncthing
         - eza
+        - git
+        - nano
+        - dkms
+        - systemd-dev
+        - gettext
     
     - name: virt-dependencies
       type: apt
