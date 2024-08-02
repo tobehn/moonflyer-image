@@ -45,6 +45,14 @@ stages:
         - bridge-utils
         - virt-manager
 
+    - name: compile-pipeline
+      type: apt
+      source:
+        packages:
+        - meson
+        - rustc
+        - cmake
+
     - name: install-tuxedo-drivers # Install Tuxedo Software
       type: shell
       commands:
