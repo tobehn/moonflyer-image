@@ -25,41 +25,42 @@ stages:
       - apt-get update
 
 # BEGIN custom actions
-    
+
     - name: syncthing # apt do installs
       type: apt
       source:
         packages:
         - syncthing
         - eza
-
+    
     - name: virt-dependencies
       type: apt
       source:
         packages:
-        - virt-manager
-        - openssh-server
+        - qemu-kvm
+        - qemu-system
+        - qemu-utils
         - libvirt-daemon-system
         - libvirt-clients
-        - qemu-system qemu-utils
+        - bridge-utils
+        - virt-manager
 
-    - name: usb-share-fix
-      type: shell
-      commands:
-        - cp  /usr/share/polkit-1/actions/_org.spice-space.lowlevelusbaccess.policy  /usr/share/polkit-1/actions/org.spice-space.lowlevelusbaccess.policy
-
-    - name: set-libvirt-group
-      type: shell
-      commands:
-        - chmod +x /etc/profile.d/add_libvirt_group.sh
-    
-    - name: install-tcc # Install Tuxedo Software
+    - name: install-tuxedo-drivers # Install Tuxedo Software
       type: shell
       commands:
         - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.6.1_all.deb
-        - wget http://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.12-3_amd64.deb
         - dpkg -i tuxedo-drivers_4.6.1_all.deb
-        - dpkg -i tuxedo-control-center_2.1.12-3_amd64.deb
+
+    - name: tailord
+      type: shell
+      commands:
+        - git clone https://github.com/AaronErhardt/tuxedo-rs.git
+        - cd tuxedo-rs/tailord
+        - meson setup --prefix=/usr _build
+        - ninja -C _build
+        - cp _build/src/tailord /usr/bin/
+        - cp _build/tailord.service /usr/lib/systemd/system/
+        - ln /usr/lib/systemd/system/tailord.service /etc/systemd/system/multi-user.target.wants/tailord.service
     
   # END custom actions
 
