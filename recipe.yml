@@ -67,8 +67,8 @@ stages:
     - name: install-tuxedo-drivers # Install Tuxedo Software
       type: shell
       commands:
-        - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.10.0_all.deb
-        - dpkg -i tuxedo-drivers_4.10.0_all.deb
+        - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.10.1_all.deb
+        - dpkg -i tuxedo-drivers_4.10.1_all.deb
 
     - name: tailord
       type: shell
