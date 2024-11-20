@@ -32,6 +32,7 @@ stages:
         packages:
         - syncthing
         - eza
+        - spacenavd
         - git
         - nano
         - dkms
