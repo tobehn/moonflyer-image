@@ -33,6 +33,7 @@ stages:
         - syncthing
         - eza
         - spacenavd
+        - spnavcfg
         - git
         - nano
         - dkms
