@@ -39,7 +39,7 @@ stages:
         - dkms
         - systemd-dev
         - gettext
-        - libmobiledevice
+        - libimobiledevice
     
     - name: virt-dependencies
       type: apt
