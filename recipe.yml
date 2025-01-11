@@ -56,7 +56,7 @@ stages:
       type: shell
       commands:
         - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.11.7_all.deb
-        - dpkg -i tuxedo-drivers_4.11.3_all.deb
+        - dpkg -i tuxedo-drivers_4.11.7_all.deb
     
     - name: install-tuxedo-TCC # Install Tuxedo Software
       type: shell
