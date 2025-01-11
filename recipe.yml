@@ -34,12 +34,7 @@ stages:
         - eza
         - spacenavd
         - spnavcfg
-        - git
-        - nano
-        - dkms
-        - systemd-dev
-        - gettext
-        - libimobiledevice
+        - libimobiledevice-1.0-6
     
     - name: virt-dependencies
       type: apt
