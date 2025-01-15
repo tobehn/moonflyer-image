@@ -91,6 +91,7 @@ stages:
         - cd ../tailor_cli
         - cargo build -Z unstable-options --release --out-dir build
         - cp build/tailor /usr/bin
+        - rm -rf tuxedo-rs
 
     - name: install-docker
       type: shell
