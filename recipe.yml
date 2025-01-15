@@ -61,9 +61,7 @@ stages:
       type: shell
       commands:
         - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.11.7_all.deb
-        - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-control-center/tuxedo-control-center_2.1.16-8_amd64.deb
         - dpkg -i tuxedo-drivers_4.11.7_all.deb
-        - dpkg -i tuxedo-control-center_2.1.16-8_amd64.deb
 
     - name: install-docker
       type: shell
