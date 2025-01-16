@@ -34,6 +34,7 @@ stages:
         - eza
         - spacenavd
         - spnavcfg
+        - lm-sensors
         - git
         - nano
         - dkms
