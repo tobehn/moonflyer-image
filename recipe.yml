@@ -70,7 +70,9 @@ stages:
       type: shell
       commands:
         - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.11.3_all.deb
+        - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-keyboard/tuxedo-keyboard_3.2.10_all.deb
         - dpkg -i tuxedo-drivers_4.11.3_all.deb
+        - dpkg -i tuxedo-keyboard_3.2.10_all.deb
 
     - name: tailord
       type: shell
@@ -109,7 +111,13 @@ stages:
    #     - cat /etc/apt/sources.list.d/docker.list
    #     - apt-get update
    #     - apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-      
+
+    - name: update-kernel-headers
+      type: shell
+      commands:
+        - apt update
+        - apt install linux-headers-$(uname -r)
+        
   # END custom actions
 
     - name: set-image-name-abroot
