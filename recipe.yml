@@ -70,9 +70,9 @@ stages:
       type: shell
       commands:
         - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-drivers_4.11.3_all.deb
-        - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-keyboard/tuxedo-keyboard_3.2.10_all.deb
+        - wget https://deb.tuxedocomputers.com/ubuntu/pool/main/t/tuxedo-drivers/tuxedo-keyboard-dkms_4.4.2_all.deb
         - dpkg -i tuxedo-drivers_4.11.3_all.deb
-        - dpkg -i tuxedo-keyboard_3.2.10_all.deb
+        - dpkg -i tuxedo-keyboard-dkms_4.4.2_all.deb
 
     - name: tailord
       type: shell
