@@ -96,7 +96,7 @@ stages:
     - name: clean-compile-pipeline
       type: shell
       commands:
-        - apt-get purge libadwaita-1-dev libgtk-4-dev meson rustc cmake
+        - apt-get purge -y libadwaita-1-dev libgtk-4-dev meson cmake
 
    # - name: install-docker
    #   type: shell
